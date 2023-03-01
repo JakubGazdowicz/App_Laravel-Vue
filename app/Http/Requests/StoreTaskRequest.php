@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreLessonRequest extends FormRequest
+class StoreTaskRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +22,10 @@ class StoreLessonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'subject' => ['required', 'min:5', Rule::unique('lessons')->ignore($this->lesson)],
-            'description' => ['required', 'min:5'],
-            'image' => ['string'],
-            'pdf_url' => ['string']
+            'lesson_id' => ['required', 'integer'],
+            'name' => ['required', 'string', 'min:3'],
+            'content' => ['required', 'string', 'min:5'],
+            'correct_answer' => ['required', 'string', 'min:1']
         ];
     }
 }

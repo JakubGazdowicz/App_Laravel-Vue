@@ -5,7 +5,7 @@ namespace App\Http\Resources\V1;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class LessonResource extends JsonResource
+class TaskResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +16,10 @@ class LessonResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'subject' => $this->subject,
-            'description' => $this->description,
-            'image' => $this->image,
-            'pdf_url' => $this->pdf_url
+            'lesson_id' => $this->lesson_id,
+            'name' => $this->name,
+            'content' => $this->content,
+            'correct_answer' => $this->correct_answer
         ];
     }
 }

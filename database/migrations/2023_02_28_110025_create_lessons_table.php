@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('subject');
             $table->string('description');
+            $table->string('image')->nullable();
+            $table->string('pdf_url')->nullable();
             $table->timestamps();
         });
     }
